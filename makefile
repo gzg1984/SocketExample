@@ -1,6 +1,5 @@
 all:ServerApp ClientApp HostApp
-#ServerApp:server/socket_SOCK_STREAM_bind_listen_accept.c
-ServerApp:server/server.c
+ServerApp:server/UdpEcho.c
 	gcc $^ -o $@
 #ClientApp:client/socket_SOCK_DGRAM_sendto.c
 ClientApp:client/client.c 
