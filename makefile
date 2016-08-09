@@ -1,5 +1,5 @@
 all:ServerApp ClientApp HostApp
-ServerApp:server/UdpEcho.c
+ServerApp:server/TcpEchoOnce.c
 	gcc $^ -o $@
 #ClientApp:client/socket_SOCK_DGRAM_sendto.c
 ClientApp:client/client.c 
