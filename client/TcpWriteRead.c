@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include <unistd.h>
+
 int main(int argc, char *argv[])
 {
 	int sockfd;
