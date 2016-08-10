@@ -8,7 +8,6 @@
 #include <stdlib.h>  /** for exit **/
 #include <unistd.h>  /** for close **/
 
-
 #define SERVER_PORT 8889
 #define MAX_MSG_SIZE 1024
 
@@ -41,8 +40,7 @@ int main(int ac, char** av)
 	addr.sin_family=AF_INET;
 	addr.sin_addr.s_addr=htonl(INADDR_ANY);
 	addr.sin_port=htons(SERVER_PORT);
-	if(bind(sockfd,(struct sockaddr *)&addr,sizeof(struct sockaddr_in))<0
-	  )
+	if(bind(sockfd,(struct sockaddr *)&addr,sizeof(struct sockaddr_in))<0)
 	{
 		fprintf(stderr,"Bind Error:%s\n",strerror(errno));
 		exit(1);
