@@ -1,5 +1,5 @@
 all:ServerApp ClientApp HostApp
-ServerApp:server/UdpRecvfrom.c
+ServerApp:server/UdpEcho.c
 	gcc $^ -o $@
 ClientApp:client/TcpRead.c
 	gcc $^ -o $@

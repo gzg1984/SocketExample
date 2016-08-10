@@ -34,7 +34,7 @@ void udps_respon(int sockfd)
 				(struct sockaddr*)&addr,&addrlen);
 		msg[n]=0;
 		/* 显示服务端已经收到了信息 */
-		fprintf(stdout,"I have received %s",msg);
+		fprintf(stdout,"I have received %s from %s\n",msg,inet_ntoa(addr.sin_addr));
 		sendto(sockfd,msg,n,0,(struct sockaddr*)&addr,addrlen);
 	}
 }
