@@ -1,5 +1,5 @@
 all:ServerApp ClientApp HostApp
-ServerApp:server/TcpHello.c
+ServerApp:server/TcpForkEchoOnce.c
 	gcc $^ -o $@
 ClientApp:client/TcpRead.c
 	gcc $^ -o $@

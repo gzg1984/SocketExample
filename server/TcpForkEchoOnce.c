@@ -1,8 +1,11 @@
-#include <sys/socket.h>;
-#include <sys/types.h>;
-#include <netinet/in.h>;
-#include <string.h>;
-#include <errno.h>;
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <stdio.h>  /** printf **/
+#include <stdlib.h> /** exit **/
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
 #define MY_PORT 8888
 int main(int argc ,char **argv)
 {
