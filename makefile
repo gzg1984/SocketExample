@@ -1,7 +1,7 @@
 all:ServerApp ClientApp HostApp
 ServerApp:server/TcpForkEchoOnce.c
 	gcc $^ -o $@
-ClientApp:client/TcpRead.c
+ClientApp:client/UdpSendRecv.c
 	gcc $^ -o $@
 HostApp:client/gethostbyname.c
 	gcc $^ -o $@
