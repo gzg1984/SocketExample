@@ -19,6 +19,7 @@ int main(int argc ,char **argv)
 	}
 	bzero(&client_addr,sizeof(struct sockaddr_in));
 	client_addr.sin_family=AF_INET;
+	printf("Will listen on %d\n",MY_PORT);
 	client_addr.sin_port=htons(MY_PORT);
 	client_addr.sin_addr.s_addr=htonl(INADDR_ANY);
 	n=1;
