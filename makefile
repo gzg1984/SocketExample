@@ -1,5 +1,6 @@
 all:ServerApp ClientApp HostApp
-ServerApp:server/TcpForkEchoOnce.c
+#ServerApp:server/TcpForkEchoOnce.c
+ServerApp:server/TcpHello.c
 	gcc $^ -o $@
 ClientApp:client/UdpSendRecv.c
 	gcc $^ -o $@

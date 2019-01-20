@@ -64,10 +64,15 @@ int main(int argc, char *argv[])
 			exit(1);
 		}
 		sprintf(FinalMessage,"%s %s\n", hello,inet_ntoa(client_addr.sin_addr));
-		if(write(new_fd,FinalMessage,sizeof(FinalMessage))==-1)
+		while(1)
+		{
+		if(write(new_fd,FinalMessage,strlen(FinalMessage))==-1)
 		{
 			fprintf(stderr,"Write Error:%s\n",strerror(errno));
 			exit(1);
+		}
+		printf("Try write done...\n");
+		sleep(1);
 		}
 		/* 这个通讯已经结束 */
 		close(new_fd);
