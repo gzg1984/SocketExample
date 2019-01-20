@@ -1,5 +1,5 @@
-FROM ubuntu:latest
+FROM gzg1984/dev_ubuntu:latest
 MAINTAINER Maxpain <g.zg1984@gmail.com>
-RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
-RUN apt update
-RUN apt-get install -y git
+RUN git clone https://github.com/gzg1984/SocketExample.git
+RUN cd SocketExample
+RUN make
