@@ -1,5 +1,5 @@
 FROM gzg1984/dev_ubuntu:latest
 MAINTAINER Maxpain <g.zg1984@gmail.com>
 RUN git clone https://github.com/gzg1984/SocketExample.git
-RUN cd SocketExample
+WORKDIR SocketExample
 RUN make
