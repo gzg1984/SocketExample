@@ -46,10 +46,11 @@ int main(int ac,char **av)
 		printf("received a connection from %s\n", inet_ntoa(remote_addr.sin_addr));
 		if (!fork()) { /* 子进程代码段 */
 			std::vector<std::string> all_result = get_all_result();
+			int count = all_result.size();
+			srand(time(NULL));
+			printf("all_result size is %lu\n",all_result.size());
 			while(1)
 			{
-				int count = all_result.size();
-				srand(time(NULL));
 				int get=rand()%count;
 				if (send(client_fd, all_result[get].data(), all_result[get].length(), 0) == -1)
 				{
