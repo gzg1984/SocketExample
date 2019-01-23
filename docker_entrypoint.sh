@@ -1,6 +1,6 @@
 #!/bin/sh
 #Start Mysql via the ubuntu_dev script
-chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+#chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 service mysql start
 
 sleep 20
@@ -10,6 +10,10 @@ service ssh start
 
 #Start My Game Server and never quit
 # Others can only access this docker via ssh
+if [ "$@" = "" ]
+then
 /SocketExample/ServerApp
-
-
+else
+/SocketExample/ServerApp &
+exec $@
+fi
