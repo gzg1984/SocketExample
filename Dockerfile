@@ -4,6 +4,6 @@ RUN git clone https://github.com/gzg1984/SocketExample.git
 WORKDIR SocketExample
 RUN make
 EXPOSE 8888
-CMD ["./start.sh"]
-CMD ["/SocketExample/ServerApp"]
+CMD ["/start.sh"]
+CMD ["/SocketExample/ServerApp","&"]
 
