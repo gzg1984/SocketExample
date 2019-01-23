@@ -76,13 +76,15 @@ std::vector<std::string> get_all_result(void)
 	MYSQL mysql;
 	mysql_init(&mysql);
 	std::vector<std::string> all_string;
-	connection = mysql_real_connect(&mysql,"localhost","root","1!Gzg19841221","test",0,0,0);
+	//connection = mysql_real_connect(&mysql,"localhost","root","1!Gzg19841221","test",0,0,0);
+	connection = mysql_real_connect(&mysql,"localhost","root","","test",0,0,0);
 	if (connection == NULL)
 	{
 		printf("连接失败:%s\n", mysql_error(&mysql));
 	}
 	else
 	{
+		mysql_query(connection,"SET NAMES UTF8");
 		printf("连接成功, 服务器版本: %s, 客户端版本: %s.\n", MYSQL_SERVER_VERSION, mysql_get_client_info());
 		if(mysql_query(connection,"select * from test"))
 		{
@@ -98,6 +100,7 @@ std::vector<std::string> get_all_result(void)
 				break;
 			char out_string[1024];
 			snprintf(out_string,1024,"%s\n",row[0]);
+			printf("制造内容:%s\n",row[0]);
 			all_string.push_back(out_string);
 		}
 		mysql_free_result(result);

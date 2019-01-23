@@ -7,13 +7,14 @@ MYSQL_LIB+=$(shell mysql_config --libs)
 MYSQL_HEAD+=$(shell mysql_config --include)
 endif
 
+all:ServerApp ClientApp HostApp
+
 ServerApp:server/TcpForkMysql.cpp
 	g++ $^ -o $@ $(MYSQL_LIB) $(MYSQL_HEAD)
 
 run:ServerApp
 	DYLD_LIBRARY_PATH=/usr/local/mysql/lib ./ServerApp
 
-all:ServerApp ClientApp HostApp
 
 
 ClientApp:client/UdpSendRecv.c
