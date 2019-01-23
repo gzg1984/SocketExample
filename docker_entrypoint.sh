@@ -1,6 +1,10 @@
 #!/bin/sh
 #Start Mysql via the ubuntu_dev script
-/start.sh
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+service mysql start
+
+sleep 20
+
 #Start sshd server
 service ssh start
 

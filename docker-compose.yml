@@ -12,6 +12,7 @@ services:
         condition: on-failure
     ports:
       - "8888:8888"
+      - "222:22"
     networks:
       - webnet
 networks:
