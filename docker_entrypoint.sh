@@ -17,10 +17,5 @@ service ssh start
 
 #Start My Game Server and never quit
 # Others can only access this docker via ssh
-if [ x"$@" = x"" ]
-then
+echo "Starting ServerApp..."
 /SocketExample/ServerApp
-else
-/SocketExample/ServerApp &
-exec $@
-fi
