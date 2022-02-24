@@ -3,3 +3,4 @@ ServerApp
 ClientApp
 HostApp
 nohup.out
+.DS_Store
